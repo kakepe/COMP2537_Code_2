@@ -1,0 +1,14 @@
+<%- include('templates/header') %>
+<div class="text-center">
+  <% if (!authenticated) { %>
+    <a class="btn btn-primary me-2" href="/signup">Sign Up</a>
+    <a class="btn btn-secondary" href="/login">Log In</a>
+  <% } else { %>
+    <h1>Welcome, <%= name %>!</h1>
+    <a class="btn btn-success me-2" href="/members">Members</a>
+    <!-- show admin button to all signed-in users -->
+    <a class="btn btn-warning me-2" href="/admin">Admin Page</a>
+    <a class="btn btn-danger" href="/logout">Log Out</a>
+  <% } %>
+</div>
+<%- include('templates/footer') %>
